@@ -1,0 +1,125 @@
+/*** ESSENTIAL STYLES ***/
+.sf-menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sf-menu li {
+	position: relative;
+}
+.sf-menu ul {
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 99999999;
+}
+.sf-menu > li {
+	float: left;
+}
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+	display: block;
+}
+
+.sf-menu a {
+	display: block;
+	position: relative;
+}
+.sf-menu ul ul {
+	top: 0;
+	left: 100%;
+}
+
+
+/*** DEMO SKIN ***/
+
+.sf-menu ul {
+	min-width: 200px; /* allow long menu items to determine submenu width */
+	*width: 200px; /* no auto sub width for IE7, see white-space comment below */
+}
+.sf-menu a {
+	text-decoration: none;
+	zoom: 1; /* IE7 */
+}
+
+.sf-menu li {
+	white-space: nowrap; /* no need for Supersubs plugin */
+	*white-space: normal; /* ...unless you support IE7 (let it wrap) */
+}
+
+
+/*fix*/
+
+
+.sf-menu li:hover li ul, ul.sf-menu li.sfHover li ul { top:-999em;z-index: 9999; }
+
+.sf-menu li li:hover ul, ul.sf-menu li li.sfHover ul {  top:0;}
+
+
+
+
+.sf-menu .megamenu {
+	position:static;
+}
+.sf-menu .sf-mega {
+	position:absolute;
+	display:none;
+	top:100%;
+	left:0;
+	z-index:99999;
+	box-sizing:border-box;
+	width:100%;
+	
+}
+.sf-menu li:hover > .sf-mega,
+.sf-menu li.sfHover > .sf-mega {
+	display: block;
+}
+.sf-menu .sf-mega ul {
+	display:block;
+}
+.sf-menu .sf-mega ul li {
+	display:block;
+	float:none;
+}
+.sf-menu .sf-mega ul {
+	width:100%!important;
+	position:static!important;
+}
+
+.sf-menu .sf-mega > ul li > ul {
+	display:block !important;
+	float:none;
+	position:static!important;
+}
+
+.mobile-menu-controll {
+	display: none; 
+}
+
+@media screen and (max-width: 768px) {
+	.mobile-menu-controll {
+		display: block; 
+	}
+	.sf-menu {
+		display: none;
+		margin: 7px 0;
+		padding: 0; 
+	}
+	.sf-menu li {
+		width: 100%;
+	}
+	.sf-menu li:hover > a {
+		position: relative;
+	}
+	.sf-menu ul {
+		width: 100% !important;
+		position: relative !important;
+		left: auto !important;
+		float: none !important;
+	}
+	.sf-menu .sf-mega {
+		position: relative !important;
+	}
+}
